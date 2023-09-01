@@ -1,0 +1,182 @@
+.profile-background{
+    background-image: linear-gradient(to left bottom, #b2d30e, #61bc49, #00a066, #00816f, #006064, #136168, #21626c, #2c636f, #268894, #14aeb6, #00d6d5, #00ffef);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
+}
+
+.profile{
+    margin: auto;
+    width: 50%;
+    height: 550px;
+    border-radius: 20px;
+    border-radius: 22px;
+    background: #8f93d6;
+    box-shadow: inset 5px 5px 10px #777ab2,
+                inset -5px -5px 10px #a7acfa;
+
+}
+
+
+.form-profile{
+
+}
+
+
+.form-profile h1{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+
+.form-profile input[type="text"]{
+
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 22px;
+    font-weight: bold;
+    background: #c0dae3;
+    box-shadow: inset 5px 5px 10px #9fb5bc,
+                inset -5px -5px 10px #e1ffff;
+    width: 200px;
+    padding: 7px;
+    border-radius: 7px;
+    margin-top: 40px;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+}
+
+.form-profile input[type="text"]::placeholder{
+
+    font-weight: bold;
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+}
+
+
+.form-profile input[type="datetime-local"]{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 22px;
+    background: #c0dae3;
+    box-shadow: inset 5px 5px 10px #9fb5bc,
+                inset -5px -5px 10px #e1ffff;
+    width: 200px;
+    padding: 7px;
+    border-radius: 7px;
+    margin-top: 40px;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.form-profile input[type="time"]::placeholder{
+
+    font-weight: bold;
+    text-transform: capitalize;
+    color: white;
+}
+
+
+.form-profile select{
+
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 22px;
+    background: #c0dae3;
+    box-shadow: inset 5px 5px 10px #9fb5bc,
+                inset -5px -5px 10px #e1ffff;
+    width: 200px;
+    padding: 7px;
+    border-radius: 7px;
+    margin-top: 40px;
+font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+}
+
+
+.form-profile input[type="number"]{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 22px;
+    background: #c0dae3;
+    box-shadow: inset 5px 5px 10px #9fb5bc,
+                inset -5px -5px 10px #e1ffff;
+    width: 200px;
+    padding: 7px;
+    border-radius: 7px;
+    margin-top: 40px;
+font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+}
+
+
+.form-profile input[type="number"]::placeholder{
+
+    font-weight: bold;
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+}
+
+
+.form-profile button{
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    padding: 7px;
+    width: 200px;
+    border-radius: 30px;
+    text-transform: capitalize;
+
+    font-weight: 900;
+    background-color: aqua;
+    color: rgb(94, 88, 88);
+    font-size: 1rem;
+
+
+}
+
+.checkgeneratedKey{
+    
+}
+
+.checkgeneratedKey h5{
+    
+    color: white;
+    text-transform: capitalize;
+}
+
+.checkgeneratedKey input[type="text"]{
+    outline: none;
+    border: none;
+    padding: 7px;
+    border-radius: 7px;
+    width: 200px;
+}
+
+.checkgeneratedKey button{
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: black;
+    color: white;
+}
+

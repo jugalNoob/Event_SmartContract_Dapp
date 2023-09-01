@@ -1,0 +1,91 @@
+.homeback{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.flexhome{
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+.icones span{
+    color: white;
+    font-size: 2rem;
+}
+
+.head-one {
+color: white;
+}
+
+.head-one h1{
+    color: white;
+    text-transform: capitalize;
+
+}
+
+.nav{
+    display: flex;
+    margin-left: 200px;
+}
+
+.nav a{
+    text-decoration: none;
+    margin-left: 100px;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav a:nth-child(1){
+    color: red;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.second{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+
+.two{
+width:200px;
+margin: 50px;
+}
+
+.two h1{
+    color: white;
+    text-transform: capitalize;
+
+}
+
+.two p{
+    text-transform: capitalize;
+color: white;
+text-align: justify;
+
+   
+}
+.images{
+    border-radius: 10px;
+    margin: 50px;
+}
+
+.images img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+
+}

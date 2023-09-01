@@ -1,0 +1,97 @@
+.background-profile{
+    overflow-y: scroll;
+position: fixed;
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,98,1) 100%);
+
+width: 100%;
+height: 100vh;
+}
+
+
+.verifyKeys{
+    margin: auto;
+    margin-top: 50px;
+}
+
+.verifyKeys h1{
+    font-weight: bold;
+    text-transform: capitalize;
+    color: white;
+}
+
+.verifyKeys input[type="number"]{
+    
+}
+
+.form-profiles{
+
+}
+
+.form-profiles input[type="number"]{
+    outline: none;
+    border: none;
+    margin: 20px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: transparent;
+    border:3px solid aqua;
+    color: white;
+    font-weight: bold;
+}
+
+.form-profiles button{
+    outline: none;
+    border: none;
+  font-size: 1rem;
+    width: 200px;
+    padding: 7px;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.profile-create{
+
+    width: 50%;
+    height: 400px;
+    border-radius: 20px;
+    border-radius: 22px;
+    background: #8f93d6;
+    box-shadow: inset 5px 5px 10px #777ab2,
+                inset -5px -5px 10px #a7acfa;
+                margin: auto;
+                margin-top: 100px;
+}
+
+
+.profile-check{
+
+}
+
+
+.profile-check h1{
+
+    text-transform: capitalize;
+    text-align: center;
+    color: rgb(253, 253, 253);
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+
+.profile-check h2{
+
+    text-transform: capitalize;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-shadow: 7px 7px 10px rgb(255, 255, 255);
+}

@@ -1,0 +1,190 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.7.0 <0.9.0;
+
+contract Practies{
+
+
+
+
+
+    event KeyGenerated(address indexed account, uint indexed key);
+
+    struct Identity {
+        string name;
+        uint data;
+        string country;
+        uint age;
+        string idcard;
+    }
+
+    mapping(address => uint[]) private generatedKeys;
+    mapping(uint => bool) public verifiedKeys;
+    mapping(address => mapping(uint => Identity[])) private identities;
+
+    function generateKey(
+        string memory _name,
+        uint _data,
+        string memory _country,
+        uint _age,
+        string memory _id
+    ) public returns (uint) {
+
+ require(_data > block.timestamp , "jugal shara");
+
+ require(bytes(_name).length > 5 , "please enter a character greater then 5");
+
+
+
+        uint key = uint(keccak256(abi.encodePacked(block.timestamp, block.difficulty, msg.sender)));
+        generatedKeys[msg.sender].push(key);
+        emit KeyGenerated(msg.sender, key);
+
+        Identity memory newIdentity = Identity(_name, _data, _country, _age, _id);
+        identities[msg.sender][key].push(newIdentity);
+
+        return key;
+    }
+
+    function verifyKey(uint _key) public {
+        verifiedKeys[_key] = true;
+    }
+
+    function getIdentity(uint _key) public view returns (Identity[] memory) {
+        require(verifiedKeys[_key] == true, "Key not verified");
+        return identities[msg.sender][_key];
+    }
+
+    function getGeneratedKeys(uint _key) public view returns (uint[] memory) {
+
+ require(verifiedKeys[_key] == true, "Key not verified");
+        return generatedKeys[msg.sender];
+    }
+
+    function getIdentityCount(uint _key) public view returns (uint) {
+        require(verifiedKeys[_key] == true, "Key not verified");
+        return identities[msg.sender][_key].length;
+    }
+
+   
+/////////////////////////////////////////Event organization
+///This is price 
+uint public price=10 wei;
+
+///This balance 
+uint public contractBalance;
+
+
+//this is struct
+struct Event{
+    uint age;
+    string name;
+    string country;
+  
+}
+
+////this is onlyOwner////
+address owner=msg.sender;
+
+modifier OnlyOwner(){
+    require(owner==msg.sender);
+    _;
+}
+
+
+//This number
+uint  number;
+
+ uint public limit=3;
+
+
+
+/////This is mapping/////////////
+mapping (address=>mapping (uint=>Event[])) private events;
+ mapping (address => uint[]) private purchasedTickets;  // Mapping to store purchased ticket numbers
+
+
+
+////////This is mint 
+function MintTicket( uint _age , string memory _name , string memory _country)public payable {
+   require(price >= 10 wei, "Insufficient funds");
+require(number < limit, "number limit ticket");
+
+
+
+payable(msg.sender).transfer(price);
+Event memory pushing=Event(_age , _name , _country);
+events[msg.sender][number].push(pushing);
+number++;
+contractBalance-=price;
+}
+
+
+/////TicketUpadateLimit
+function TicketLimitUpdate(uint _limit)public OnlyOwner{
+require(_limit < 21 ,"only update ticket is 20 tickets ");
+limit+=_limit;
+
+}
+
+
+//Tick Cute update
+function CutLimit(uint _limit)public OnlyOwner{
+    limit-=_limit;
+}
+
+
+//check Number 
+function checkNumber()public view returns(uint256){
+    return  number;
+}
+
+////Check MintTickDetaile
+function MinTTicketDetaile(uint numbers) public view returns (Event[] memory) {
+  return events[msg.sender][numbers];
+}
+
+
+///Check Balance payable 
+function CheckBalnce()public  payable {
+    contractBalance+=msg.value;
+}
+
+
+//Withdraw a balance your account
+ function withdraw(uint amount) public OnlyOwner payable {
+        require(amount <= contractBalance, "Insufficient contract balance");
+        contractBalance -= amount;
+        payable(msg.sender).transfer(amount);
+    }
+
+
+////BuyNumber A mint Number
+ function Buy_Number(uint256 ticketNumber) public {
+    require(ticketNumber > 0, "Invalid ticket number");
+    purchasedTickets[msg.sender].push(number - 1); // Store the purchased ticket number for the user
+  delete   events[msg.sender][number];
+  
+        number--;
+  
+}
+
+
+// function getMyTickets() public view returns (uint[] memory) {
+//         return purchasedTickets[msg.sender];
+//     }
+
+
+////////GetTickets Get Information
+function getMyTickets() public view returns (uint[] memory) {
+    uint[] memory myTickets = new uint[](purchasedTickets[msg.sender].length);
+    uint index = 0;
+    for (uint i = purchasedTickets[msg.sender].length; i > 0; i--) {
+        myTickets[index] = purchasedTickets[msg.sender][i - 1];
+        index++;
+    }
+    return myTickets;
+}
+  
+
+}
